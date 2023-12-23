@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS ExpenseCategory(
+    id LONG PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Expense (
+    id LONG PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    date VARCHAR(20),
+    description VARCHAR(50),
+    amount DOUBLE NOT NULL,
+    FOREIGN KEY (categoryId) REFERENCES ExpenseCategory(id),
+    categoryName VARCHAR(30) NOT NULL
+)
